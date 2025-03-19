@@ -1,0 +1,32 @@
+name: Advanced CI Pipeline
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Yarn 4.7
+        run: |
+          corepack enable
+          corepack prepare yarn@4.7 --activate  # Ensures Yarn version 4.7 is used
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Lint Code
+        run: yarn lint
+
+      - name: Run Tests
+        run: yarn test
+
+      - name: Build Project
+        run: yarn build

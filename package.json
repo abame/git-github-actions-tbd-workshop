@@ -1,0 +1,22 @@
+{
+    "name": "git-github-actions-tbd-workshop",
+    "version": "1.0.0",
+    "description": "Sample repository for Git, GitHub Actions, and Trunk-Based Development workshop",
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "tsc",
+        "test": "jest",
+        "lint": "eslint ."
+    },
+    "devDependencies": {
+        "@types/jest": "latest",
+        "@typescript-eslint/eslint-plugin": "^8.26.1",
+        "@typescript-eslint/parser": "^8.26.1",
+        "eslint": "^9.22.0",
+        "eslint-plugin-jest": "^28.11.0",
+        "jest": "latest",
+        "ts-jest": "latest",
+        "typescript": "latest"
+    },
+    "packageManager": "yarn@4.7.0"
+}
